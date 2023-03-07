@@ -10,11 +10,10 @@
 				border-collapse: collapse;
 				table-layout: fixed;
 			}
-
 			#tetris td,
 			#nextBlock td {
-				width: 30px;
-				height: 30px;
+				width: 20px;
+				height: 20px;
 			}
 			td.r {
 				background-color: red;
@@ -49,84 +48,118 @@
 			td.black {
 				background-color: black;
 			}
-			.grid-item {
-				float: left;
-				margin-right: 50px;
-			}
-			footer {
-				clear: left;
-			}
+
 			button {
-				width: 125px;
-				height: 50px;
-				font-size: 25px;
+				width: 50px;
+				height: 25px;
+				font-size: 15px;
 			}
-			.btn-group {
-				clear: left;
+
+			.btn-key {
+				width: 70px;
+				height: 150px;
+				font-size: 15px;
 			}
-			button#btnSpace {
-				width: 250px;
-				height: 100px;
-				font-size: 50px;
-			}
-			#table-btn {
-				border-spacing: 10px;
-				border-collapse: separate;
+			#btnPause,
+			#btnEasy,
+			#btn-key-info {
+				width: 70px;
 			}
 		</style>
 	</head>
 	<body>
-		<div align="center">
-			<h1>Tetris</h1>
-			<div class="grid">
-				<div class="grid-item">
-					<table id="tetris" class="border"></table>
-				</div>
-				<div class="grid-item">
-					<h2>Next</h2>
-					<table id="nextBlock"></table>
-					<h2>Score</h2>
-					<h2 id="score"></h2>
-					<h2>Time</h2>
-					<h2><span id="time"></span>s</h2>
-					<button id="btnEasy">Easy</button>
-					<button id="btnPause">Pause</button>
-					<br /><br />
-					<h2>Speed</h2>
-					<h2 id="speed"></h2>
-					<button id="btnSpeedDown">Down</button>
-					<button id="btnSpeedChange">Change</button>
-					<button id="btnSpeedUp">Up</button>
-				</div>
-			</div>
-			<div align="center" class="btn-group">
-				<br />
-				<table id="table-btn">
-					<tr>
-						<td></td>
-						<td>
-							<button id="btnUp">↑</button>
-						</td>
-						<td></td>
-						<td rowspan="2">
-							<button id="btnSpace">Space</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button id="btnLeft">←</button>
-						</td>
-						<td>
-							<button id="btnDown">↓</button>
-						</td>
-						<td>
-							<button id="btnRight">→</button>
-						</td>
-						<td></td>
-					</tr>
-				</table>
-			</div>
+		<div id="header" role="banner">
+			<table width="100%">
+				<tr>
+					<td text-align="left"></td>
+					<td align="right"></td>
+				</tr>
+			</table>
 		</div>
+		<br />
+		<div id="main" role="main">
+			<table border="1" align="center">
+				<tr>
+					<td>
+						<a href="https://kseek84.github.io/portfolio/"
+							>Made by</a
+						>
+					</td>
+					<td rowspan="4">
+						<div align="center">
+							<div>
+								<h1>Tetris</h1>
+								<table id="tetris" class="border"></table>
+							</div>
+						</div>
+					</td>
+					<td rowspan="4">
+						<div align="center">
+							<h3>Next</h3>
+							<table id="nextBlock"></table>
+							<h3>Score</h3>
+							<h3 id="score"></h3>
+							<h3>Time</h3>
+							<h3><span id="time"></span></h3>
+							<button id="btnPause">Pause</button>
+							<br /><br />
+							<button id="btnEasy">Easy</button>
+							<br /><br />
+							<h3>Speed</h3>
+							<h3 id="speed"></h3>
+							<table>
+								<tr>
+									<td>
+										<button id="btnSpeedDown">Down</button>
+									</td>
+									<td>
+										<button id="btnSpeedChange">Set</button>
+									</td>
+									<td>
+										<button id="btnSpeedUp">Up</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td>
+						<button id="btn-key-info">Key</button>
+					</td>
+				</tr>
+				<tr>
+					<td><button id="btnUp" class="btn-key">↑</button></td>
+					<td><button id="btnUp" class="btn-key">↑</button></td>
+				</tr>
+				<tr>
+					<td>
+						<button id="btnLeft" class="btn-key">←</button>
+					</td>
+					<td>
+						<button id="btnRight" class="btn-key">→</button>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button id="btnDown" class="btn-key">↓</button>
+					</td>
+					<td>
+						<button id="btnSpace" class="btn-key">↓↓↓</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="footer" role="content info"></div>
+
+		<script>
+			document
+				.querySelector("#btn-key-info")
+				.addEventListener("click", (e) => {
+					alert(
+						`[Key]\n\nW, ↑ - Rotate\nA, ← - Left\nS, ↓ - Down\nD, → - Right\nSpace - Down to the bottom`
+					);
+				});
+		</script>
 
 		<script src="./js/tetris.js" type="module"></script>
 	</body>
