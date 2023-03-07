@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tetris</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				table-layout: fixed;
+			}
+
+			#tetris td,
+			#nextBlock td {
+				width: 30px;
+				height: 30px;
+			}
+			td.r {
+				background-color: red;
+			}
+			td.o {
+				background-color: orange;
+			}
+			td.y {
+				background-color: yellow;
+			}
+			td.g {
+				background-color: green;
+			}
+			td.b {
+				background-color: blue;
+			}
+			td.n {
+				background-color: navy;
+			}
+			td.v {
+				background-color: violet;
+			}
+			td.w {
+				background-color: white;
+			}
+			td.guide {
+				background-color: aqua;
+			}
+			td.dg {
+				background-color: darkgray;
+			}
+			td.black {
+				background-color: black;
+			}
+			.grid-item {
+				float: left;
+				margin-right: 50px;
+			}
+			footer {
+				clear: left;
+			}
+			button {
+				width: 125px;
+				height: 50px;
+				font-size: 25px;
+			}
+			.btn-group {
+				clear: left;
+			}
+			button#btnSpace {
+				width: 250px;
+				height: 100px;
+				font-size: 50px;
+			}
+			#table-btn {
+				border-spacing: 10px;
+				border-collapse: separate;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<h1>Tetris</h1>
+			<div class="grid">
+				<div class="grid-item">
+					<table id="tetris" class="border"></table>
+				</div>
+				<div class="grid-item">
+					<h2>Next</h2>
+					<table id="nextBlock"></table>
+					<h2>Score</h2>
+					<h2 id="score"></h2>
+					<h2>Time</h2>
+					<h2><span id="time"></span>s</h2>
+					<button id="btnEasy">Easy</button>
+					<button id="btnPause">Pause</button>
+					<br /><br />
+					<h2>Speed</h2>
+					<h2 id="speed"></h2>
+					<button id="btnSpeedDown">Down</button>
+					<button id="btnSpeedChange">Change</button>
+					<button id="btnSpeedUp">Up</button>
+				</div>
+			</div>
+			<div align="center" class="btn-group">
+				<br />
+				<table id="table-btn">
+					<tr>
+						<td></td>
+						<td>
+							<button id="btnUp">↑</button>
+						</td>
+						<td></td>
+						<td rowspan="2">
+							<button id="btnSpace">Space</button>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button id="btnLeft">←</button>
+						</td>
+						<td>
+							<button id="btnDown">↓</button>
+						</td>
+						<td>
+							<button id="btnRight">→</button>
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<script src="./js/tetris.js" type="module"></script>
+	</body>
+</html>
